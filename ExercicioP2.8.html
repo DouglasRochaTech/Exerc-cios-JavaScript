@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Receba um número via prompt e mostre no console:
+    "Positivo" se maior que 0, "Negativo" se menor que 0, ou "Zero" caso contrário,
+    usando apenas operador ternário.
+    
+    <script>
+        let numero = parseFloat(prompt("Digite um número: "))
+
+        console.log(numero > 0 ? "Positivo" : (numero == 0 ? "Zero" : "Negativo"))
+        alert(numero > 0 ? "Positivo" : (numero == 0 ? "Zero" : "Negativo"))
+    </script>      
+</body>
+</html>

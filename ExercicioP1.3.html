@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Concatenação de Strings:
+    Crie três variáveis (let nome, let sobrenome, let anoNascimento) e mostre no
+    console a frase:
+    "Olá, meu nome é <nome completo> e eu nasci em <anoNascimento>". <nome
+    completo> deve ser a concatenação de nome e sobrenome
+
+    <script>
+        let nome = prompt("Digite seu primeiro nome: ")
+        let sobrenome = prompt("Digite seu sobrenome: ")
+        let anoNascimento = parseInt(prompt("Digite o seu ano de nascimento: "))
+
+        alert(`Olá, meu nome é ${nome + " " + sobrenome} e nasci em ${anoNascimento}.`)
+    </script>
+</body>
+</html>

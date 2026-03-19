@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Ordenação (sort):
+    Dado o array [5, 1, 9, 3, 7], ordene-o em ordem crescente usando sort.
+
+    <script>
+        let numeros = [5, 1, 9, 3, 7]
+
+        //Isso aqui não funciona!!! Pra fazer uma cópia de uma array mantendo a original intacta no js 
+        //tem que fazer uma gambiarra horrível, porque "numerosOrdenados = numeros" faz "numerosOrdenados" 
+        //ser uma referência de "numeros" e não uma cópia separada. No C# não tem essa palhaçada!!!
+        /*let numerosOrdenados = numeros
+        numerosOrdenados.sort()*/ 
+
+        //Gambiarra pra preservar a array original:
+        let numerosOrdenados = [...numeros].sort((a, b) => a - b)
+
+        console.log(numerosOrdenados)
+    </script>
+</body>
+</html>

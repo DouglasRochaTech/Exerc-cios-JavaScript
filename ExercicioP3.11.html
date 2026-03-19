@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Percorrendo Objetos com for...in:
+    Crie um objeto pessoa com nome, idade e cidade. Use for...in para listar suas
+    propriedades e valores.
+
+    <p id = "propriedades"></p>
+    
+    <script>
+        pessoa = {nome: "Juvair", idade: 68, endereço: "leblon"}
+
+        for (propriedade in pessoa)
+        {
+            document.getElementById("propriedades").innerHTML += `<br>${propriedade}: ${pessoa[propriedade]}`
+        }
+        //no "for in" a variável não é um número!!! Ela recebe uma "chave" com o nome do item na iteração atual no objeto, é meio confuso...
+
+    </script>      
+</body>
+</html>

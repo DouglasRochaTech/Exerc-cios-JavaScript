@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Filtrar Números Pares (filter):
+    Dado o array [10, 15, 20, 25, 30], use filter para criar um array apenas com
+    números pares.
+
+    <script>
+        numeros = [10, 15, 20, 25, 30]
+
+        numerosPares = numeros.filter(function(numero) {
+        return numero %2 == 0;
+        });
+
+        console.log(numerosPares)
+        console.log(numeros)
+        //vai mostrar [10, 20, 30]!!!
+    </script>
+</body>
+</html>

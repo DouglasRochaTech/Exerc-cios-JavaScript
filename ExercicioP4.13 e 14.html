@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Criação de Objeto:
+    Crie um objeto carro com propriedades marca, modelo e ano. Mostre todas as
+    propriedades no console, usando uma instrução console.log para cada uma das
+    propriedades. 
+
+    Método em Objeto:
+    Adicione ao objeto carro um método descricao() que retorne uma string:
+    "Marca: <marca>, Modelo: <modelo>, Ano: <ano>".
+    Chame esse método e mostre o resultado no console 
+    
+    <script>
+        carro = 
+        {
+            marca: "VW", 
+            modelo: "UP", 
+            ano: 2017,
+
+            descricao: function(){
+                return `Marca :${this.marca}, Modelo :${this.modelo}, Ano: ${this.ano}.` 
+            }
+        }
+
+        console.log(carro["marca"])
+        console.log(carro["modelo"])
+        console.log(carro["ano"])
+
+        console.log(carro.descricao())
+    </script>      
+</body>
+</html>

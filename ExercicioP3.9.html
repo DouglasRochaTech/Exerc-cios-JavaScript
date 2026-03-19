@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Tabuada com for:
+    Receba um número e mostre a tabuada de 1 a 10 usando for.
+
+    <p id="tabuada"></p>
+    
+    <script>
+        numero = parseInt(prompt("Digite um número: "))
+
+        for (let i = 1; i < 11; i++)
+        {
+            document.getElementById("tabuada").innerHTML += `<br>${numero} x ${i} = ${numero * i}` 
+        }
+    </script>      
+</body>
+</html>
