@@ -19,6 +19,10 @@
         Chico<br>
         Samanta<br>
     </p>
+    <p id="Tempos">
+
+    </p>
+
     <br>
 
     <script>
@@ -47,6 +51,7 @@
             Fila.push(document.getElementById("campoPessoa").value, "\n")
 
             document.getElementById("Fila").innerText = Fila
+            document.getElementById("Tempos").innerText = formatador.format(Date.now()) //teste
         }
 
         function Atender()
@@ -55,6 +60,13 @@
 
             document.getElementById("Fila").innerText = Fila
         }
+
+        //Essa aqui a IA fez pra deixar o "Date.now()" legível:
+        const formatador = new Intl.DateTimeFormat('pt-BR', {
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit'
+        });
 
 
     </script>
