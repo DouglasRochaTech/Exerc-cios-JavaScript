@@ -4,14 +4,94 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+
+    </style>
 </head>
 <body>
-    Refaça os exercícios que precisam de entrada de dados substituindo o prompt por
-    um formulário. Também faça com que a resposta apareça na própria página HTML
-    em lugar do console
+    <h1>Verificação de idade!!!</h1>
+
+    <input id = "campoIdade">
+    <button onclick="VerificacaoDeIdade()">Calcular!</button>
+    <p id="resultadoIdade"></p>
+    <br>
+
+
+    <h1>Par ou Ímpar?!?!</h1>
+
+    <input id = "campoParOuImpar">
+    <button onclick="ParOuImpar()">Calcular!</button>
+    <p id="resultadoParOuImpar"></p>
+    <br>
+
+
+    <h1>Positivo ou Negativo?!?!</h1>
+
+    <input id = "campoPosOuNeg">
+    <button onclick="PosOuNeg()">Calcular!</button>
+    <p id="resultadoPosOuNeg"></p>
+    <br>
+
 
     <script>
+        /*
+        Refaça os exercícios que precisam de entrada de dados substituindo o prompt (5, 6 e 8) por
+        um formulário. Também faça com que a resposta apareça na própria página HTML
+        em lugar do console
+
+        5) Verificação de Idade:
+        Peça ao usuário (com prompt) sua idade.
+        o Se for menor que 12, mostre "Criança".
+        o Se estiver entre 12 e 17, mostre "Adolescente".
+        o Se for maior ou igual a 18, mostre "Adulto".
+
+        6) Número Par ou Ímpar:
+        Receba um número via prompt e use if/else para verificar se é par ou ímpar.
+
+        8) Receba um número via prompt e mostre no console:
+        "Positivo" se maior que 0, "Negativo" se menor que 0, ou "Zero" caso contrário,
+        usando apenas operador ternário.
+        */
         
+        function VerificacaoDeIdade()
+        {
+            let idade = parseInt(document.getElementById("campoIdade").value)
+
+            if (idade < 12)
+            {
+                document.getElementById("resultadoIdade").innerText = "Você é criança!"
+            }
+            else if (idade <= 17)
+            {
+                document.getElementById("resultadoIdade").innerText = "Você é adolescente!"
+            }
+            else
+            {
+                document.getElementById("resultadoIdade").innerText = "Você é adulto!"
+            }
+        }
+
+        function ParOuImpar()
+        {
+            let numero = parseInt(document.getElementById("campoParOuImpar").value)
+
+            if (numero %2 == 0)
+            {
+                document.getElementById("resultadoParOuImpar").innerText = "O número é par!"
+            }
+            else
+            {
+                document.getElementById("resultadoParOuImpar").innerText = "O número é ímpar!"
+            }
+        }
+
+        function PosOuNeg()
+        {
+            let numero = parseFloat(document.getElementById("campoPosOuNeg").value)
+
+            document.getElementById("resultadoPosOuNeg").innerText = numero > 0 ? "Positivo!" : (numero == 0 ? "Zero!" : "Negativo!")
+        }
+
     </script>
 </body>
 </html>

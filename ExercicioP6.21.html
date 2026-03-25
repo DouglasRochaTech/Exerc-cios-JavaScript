@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Fila de Atendimento!!!</h1>
+
+    <input id = "campoPessoa">
+    <button onclick="ChecarFila()">Entrar na fila!</button>
+    <button onclick="Atender()">Atender!</button>
+    <p id="Fila">
+        José<br>
+        Carlos<br>
+        Maria<br>
+        João<br>
+        Chico<br>
+        Samanta<br>
+    </p>
+    <br>
+
+    <script>
+        /*
+        Escreva um programa para controlar uma fila de atendimento, deve guardar o
+        nome da pessoa ao clicar no botão "entrar na fila" e inserir no final de uma fila.
+        Quando a pessoa for atendida, deve clicar no botão "atender" que vai retirar o
+        nome da pessoa que está no primeiro lugar na fila. Também guarde a data e hora
+        que a pessoa entrou na fila (use Date.now() para obter essa informação . Veja
+        como formatar a data usando Intl.DateTimeFormat).
+        Quando ela for atendida (retirada da fila), deve calcular quanto tempo levou para
+        ser atendida.
+        Use vetores para armazenar as informações. Para inserir no final da fila use o
+        método "push()" e para remover do início da fila use o método "shift()" . Crie um
+        vetor para armazenar o nome e a hora (hora, minutos e segundos) que a pessoa
+        entrou na fila. Em outro vetor armazene o nome, data e hora que pessoa entrou na
+        fila, data e hora que foi atendida e quanto tempo demorou para ser atendida.
+        Cada vez que uma pessoa entrar na fila ou for atendida deve exibir os dados
+        armazenados nos dois vetores.*/
+
+        let Fila = ["José\n", "Carlos\n", "Maria\n", "João\n", "Chico\n", "Samanta\n"]
+        //let 
+
+        function ChecarFila()
+        {
+            Fila.push(document.getElementById("campoPessoa").value, "\n")
+
+            document.getElementById("Fila").innerText = Fila
+        }
+
+        function Atender()
+        {
+            Fila.shift()
+
+            document.getElementById("Fila").innerText = Fila
+        }
+
+
+    </script>
+</body>
+</html>
