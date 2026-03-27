@@ -45,7 +45,7 @@
         Cada vez que uma pessoa entrar na fila ou for atendida deve exibir os dados
         armazenados nos dois vetores.*/
 
-        let Fila = [1, "José\n", 1, "Carlos\n", 1, "Maria\n", 1, "João\n", 1, "Chico\n", 1, "Samanta\n"]
+        let Fila = [1, "| José\n", 1, "| Carlos\n", 1, "| Maria\n", 1, "| João\n", 1, "| Chico\n", 1, "| Samanta\n"]
         let FilaLegivel = []
 
         let Historico = []
@@ -55,7 +55,7 @@
         function AdicionarNaFila()
         {
             Fila.push(Date.now())
-            Fila.push(document.getElementById("campoPessoa").value + "\n")
+            Fila.push("| " + document.getElementById("campoPessoa").value + "\n")
 
             MostrarFila() //pelo amor de Deus funcione
         }
@@ -63,13 +63,12 @@
         function Atender()
         {
             Historico.push(Fila[0])
-            Historico.push(" >>>>> ", Date.now(), "____")
+            Historico.push(" >>>>> ", Date.now(), "|____|")
 
             let TempoEspera = (Date.now() - Fila[0]) / 1000
             
             //Historico[1] = Historico[1], "Espera: ", TempoEspera.toString(), "segundos. \n"
             Historico.push("Espera: ", TempoEspera.toString(), "segundos.")
-
             Historico.push(Fila[1])
 
             Fila.shift()
@@ -105,8 +104,9 @@
 
             document.getElementById("Historico").innerText = HistoricoLegivel.join(" ")
 
-            document.getElementById("Debug").innerText = Fila
-            console.log(Fila)
+            //finalmente esse trem funcionou!!!!!!
+            //document.getElementById("Debug").innerText = Fila
+            //console.log(Fila)
         }
 
         //Essa função aqui a IA fez pra deixar o Date.now() legível:
