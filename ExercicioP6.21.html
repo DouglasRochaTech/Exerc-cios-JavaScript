@@ -9,17 +9,19 @@
     <h1>Fila de Atendimento!!!</h1>
 
     <input id = "campoPessoa">
-    <button onclick="ChecarFila()">Entrar na fila!</button>
+    <button onclick="AdicionarNaFila()">Entrar na fila!</button>
     <button onclick="Atender()">Atender!</button>
     <p id="Fila">
-        José<br>
-        Carlos<br>
-        Maria<br>
-        João<br>
-        Chico<br>
-        Samanta<br>
+
     </p>
-    <p id="Tempos">
+
+    <br>
+    <h1>Histórico de Atendimento:</h1>
+    <p id="Historico">
+
+    </p>
+
+    <p id="Debug">
 
     </p>
 
@@ -43,30 +45,81 @@
         Cada vez que uma pessoa entrar na fila ou for atendida deve exibir os dados
         armazenados nos dois vetores.*/
 
-        let Fila = ["José\n", "Carlos\n", "Maria\n", "João\n", "Chico\n", "Samanta\n"]
+        let Fila = [1, "José\n", 1, "Carlos\n", 1, "Maria\n", 1, "João\n", 1, "Chico\n", 1, "Samanta\n"]
+        let FilaLegivel = []
+
+        let Historico = []
+        let HistoricoLegivel = []
         //let 
 
-        function ChecarFila()
+        function AdicionarNaFila()
         {
-            Fila.push(document.getElementById("campoPessoa").value, "\n")
+            Fila.push(Date.now())
+            Fila.push(document.getElementById("campoPessoa").value + "\n")
 
-            document.getElementById("Fila").innerText = Fila
-            document.getElementById("Tempos").innerText = formatador.format(Date.now()) //teste
+            MostrarFila() //pelo amor de Deus funcione
         }
 
         function Atender()
         {
+            Historico.push(Fila[0])
+            Historico.push(" >>>>> ", Date.now(), "____")
+
+            let TempoEspera = (Date.now() - Fila[0]) / 1000
+            
+            //Historico[1] = Historico[1], "Espera: ", TempoEspera.toString(), "segundos. \n"
+            Historico.push("Espera: ", TempoEspera.toString(), "segundos.")
+
+            Historico.push(Fila[1])
+
+            Fila.shift()
             Fila.shift()
 
-            document.getElementById("Fila").innerText = Fila
+            MostrarFila()
         }
 
-        //Essa aqui a IA fez pra deixar o "Date.now()" legível:
+        function MostrarFila()
+        {
+            FilaLegivel = [...Fila]
+
+            for (i = 0; i < FilaLegivel.length; i++)
+            {
+                if (typeof FilaLegivel[i] === "number")
+                {
+                    FilaLegivel[i] = formatador.format(FilaLegivel[i])
+                }
+            }
+
+            document.getElementById("Fila").innerText = FilaLegivel.join(" ")
+
+
+            HistoricoLegivel = [...Historico]
+
+            for (i = 0; i < HistoricoLegivel.length; i++)
+            {
+                if (typeof HistoricoLegivel[i] === "number")
+                {
+                    HistoricoLegivel[i] = formatador.format(HistoricoLegivel[i])
+                }
+            }
+
+            document.getElementById("Historico").innerText = HistoricoLegivel.join(" ")
+
+            document.getElementById("Debug").innerText = Fila
+            console.log(Fila)
+        }
+
+        //Essa função aqui a IA fez pra deixar o Date.now() legível:
         const formatador = new Intl.DateTimeFormat('pt-BR', {
+            day: '2-digit',
+            month: '2-digit',
+            year: 'numeric',
             hour: '2-digit',
             minute: '2-digit',
             second: '2-digit'
         });
+
+        MostrarFila()
 
 
     </script>
